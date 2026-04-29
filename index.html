@@ -1,0 +1,846 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>خطة النشر — الرائدة للتمويل</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #07439B;
+    --color-dark: #00326D;
+    --color-white: #FFFFFF;
+    --color-yellow: #F1C31B;
+    --color-cyan: #2BBDE8;
+    --color-light-blue: #5BA4D4;
+    --color-bg: #F4F7FB;
+    --yt:  #FF0000;
+    --ig:  #07439B;
+    --li:  #6b7a99;
+    --tt:  #111111;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Cairo', sans-serif; background: var(--color-bg); color: var(--color-dark); min-height: 100vh; }
+
+  /* HEADER */
+  .page-header { background: var(--color-primary); padding: 32px 48px 28px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .page-header .logo { height: 44px; }
+  .page-header-text h1 { color: var(--color-white); font-size: 26px; font-weight: 800; line-height: 1.3; }
+  .page-header-text p { color: var(--color-cyan); font-size: 14px; font-weight: 500; margin-top: 4px; }
+  .header-badge { background: var(--color-yellow); color: var(--color-dark); font-size: 13px; font-weight: 700; padding: 8px 18px; border-radius: 999px; white-space: nowrap; }
+
+  /* STATS BAR */
+  .stats-bar { background: var(--color-dark); display: flex; justify-content: center; gap: 48px; padding: 14px 48px; }
+  .stat { display: flex; align-items: center; gap: 8px; color: var(--color-white); font-size: 13px; }
+  .stat strong { color: var(--color-yellow); font-size: 18px; font-weight: 800; }
+
+  /* INTRO BANNER */
+  .intro-banner { background: white; border-bottom: 1px solid #e2eaf4; padding: 20px 48px; display: flex; align-items: flex-start; gap: 20px; }
+  .intro-icon { width: 44px; height: 44px; background: var(--color-primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .intro-text { flex: 1; font-size: 14px; font-weight: 500; color: #3a4a6b; line-height: 1.9; }
+  .intro-text strong { color: var(--color-primary); font-weight: 800; }
+  .intro-text .intro-cta { color: var(--color-dark); font-weight: 700; border-right: 3px solid var(--color-yellow); padding-right: 10px; margin-top: 6px; }
+
+  /* LEGEND */
+  .legend { display: flex; align-items: center; gap: 16px; padding: 16px 48px; background: white; border-bottom: 1px solid #e2eaf4; flex-wrap: wrap; }
+  .legend-label { font-size: 12px; color: #6b7a99; font-weight: 600; margin-left: 4px; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #445; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .legend-platform { display: flex; gap: 5px; align-items: center; }
+  .lpill { font-size: 10px; font-weight: 800; padding: 2px 9px; border-radius: 999px; }
+  .lpill-yt { background:#fff0f0; color:var(--yt); }
+  .lpill-ig { background:#eef4ff; color:var(--ig); }
+  .lpill-li { background:#f5f5f5; color:#555; border:1px solid #ddd; }
+  .lpill-tt { background:#f2f2f2; color:var(--tt); }
+
+  /* MAIN CONTENT */
+  .content { padding: 32px 48px 60px; max-width: 1200px; margin: 0 auto; }
+
+  /* WEEK BLOCK */
+  .week-block { margin-bottom: 32px; }
+  .week-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .week-number { background: var(--color-primary); color: var(--color-white); font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 999px; letter-spacing: 0.5px; }
+  .week-title { font-size: 15px; font-weight: 700; color: var(--color-dark); }
+  .week-line { flex: 1; height: 1px; background: #d4e0ef; }
+
+  /* VIDEO CARDS ROW */
+  .week-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  /* VIDEO CARD */
+  .video-card { background: white; border-radius: 20px; box-shadow: 0 2px 12px rgba(7,67,155,0.07); display: flex; flex-direction: column; transition: transform 0.15s, box-shadow 0.15s; overflow: visible; }
+  .video-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(7,67,155,0.13); }
+  .card-top { padding: 16px 20px 14px; display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; border-bottom: 1px solid #eef2f8; }
+  .video-num { font-size: 32px; font-weight: 900; color: #d4e0ef; line-height: 1; flex-shrink: 0; font-feature-settings: "tnum"; }
+  .card-title-block { flex: 1; }
+  .card-date { font-size: 11px; font-weight: 600; color: var(--color-cyan); margin-bottom: 4px; display: flex; align-items: center; gap: 5px; }
+  .card-date::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--color-cyan); }
+  .card-topic { font-size: 15px; font-weight: 800; color: var(--color-dark); line-height: 1.4; }
+  .card-day-badge { font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 999px; flex-shrink: 0; }
+  .badge-sun { background: #FFF3CD; color: #8B6900; }
+  .badge-wed { background: #E0EEFF; color: #0a4299; }
+
+  /* CARD BODY */
+  .card-body { padding: 14px 20px 20px; flex: 1; display: flex; flex-direction: column; gap: 12px; }
+  .card-section-label { font-size: 10px; font-weight: 700; color: #9aabcc; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+
+  /* PLATFORM TABS — ROW 1 */
+  .caption-tabs { display: flex; gap: 5px; margin-bottom: 8px; flex-wrap: wrap; }
+
+  /* Platform tab style */
+  .cap-tab {
+    display: flex; align-items: center; gap: 5px;
+    background: #f0f4fb; border: 1.5px solid transparent;
+    border-radius: 999px; padding: 4px 12px;
+    font-family: 'Cairo', sans-serif; font-size: 11px; font-weight: 700;
+    color: #6b7a99; cursor: pointer; transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .cap-tab svg { flex-shrink: 0; }
+  .cap-tab:hover:not(.active) { background: #e0eaff; color: var(--color-primary); }
+
+  /* Active states per platform */
+  .cap-tab.active-yt { background: #fff0f0; color: var(--yt); border-color: var(--yt); }
+  .cap-tab.active-ig { background: #eef4ff; color: var(--ig); border-color: var(--ig); }
+  .cap-tab.active-li { background: #f5f5f5; color: #555; border-color: #ccc; }
+  .cap-tab.active-tt { background: #f2f2f2; color: var(--tt); border-color: #888; }
+
+  /* CAPTION PANELS */
+  .caption-panel { display: none; }
+  .caption-panel.active { display: flex; flex-direction: column; gap: 6px; }
+
+  .card-caption {
+    font-size: 12.5px; font-weight: 500; color: #3a4a6b;
+    line-height: 1.75; background: #f7f9fd; border-radius: 10px;
+    padding: 10px 12px; border-right: 3px solid var(--color-primary);
+    white-space: pre-line;
+  }
+  .card-caption.yt { border-right-color: var(--yt); background: #fffafa; }
+  .card-caption.ig { border-right-color: var(--ig); background: #f0f6ff; }
+  .card-caption.li { border-right: 3px solid #ccc; background: #ffffff; }
+  .card-caption.tt { border-right-color: #555; background: #f8f8f8; }
+
+  .caption-footer { display: flex; align-items: center; justify-content: space-between; }
+  .char-count { font-size: 10px; color: #aab5cc; font-weight: 600; }
+
+  /* LENGTH TABS */
+  .len-tabs { display:flex; gap:4px; margin-bottom:6px; }
+  .len-tabs-shared { display:flex; gap:4px; }
+  .len-tab { background:#f0f4fb; border:1.5px solid transparent; border-radius:999px; padding:3px 10px; font-family:'Cairo',sans-serif; font-size:10px; font-weight:700; color:#9aabcc; cursor:pointer; transition:all 0.12s; }
+  .len-tab:hover:not(.active) { background:#e0eaff; color:var(--color-primary); }
+  .len-tab.active { background:var(--color-primary); color:white; border-color:var(--color-primary); }
+  .len-panel { display:none; }
+  .len-panel.active { display:flex; flex-direction:column; gap:6px; }
+
+  /* COPY BTN */
+  .copy-caption-btn { display: flex; align-items: center; gap: 5px; background: var(--color-primary); color: white; border: none; border-radius: 8px; padding: 5px 12px; font-family: 'Cairo', sans-serif; font-size: 11px; font-weight: 700; cursor: pointer; transition: background 0.15s; }
+  .copy-caption-btn:hover { background: var(--color-dark); }
+  .copy-caption-btn.copied { background: #22c55e; }
+
+  .card-hashtags { font-size: 11px; color: var(--color-primary); font-weight: 600; line-height: 1.8; direction: rtl; }
+
+  /* LINK INPUT */
+  .link-row { display: flex; align-items: center; gap: 8px; margin-top: auto; }
+  .link-input { display: none; }
+  .link-copy-btn { display: none; }
+  .link-open-btn { display: flex; align-items: center; gap: 6px; background: var(--color-primary); color: white; border: none; border-radius: 8px; padding: 6px 14px; font-family: 'Cairo', sans-serif; font-size: 11px; font-weight: 700; cursor: pointer; transition: background 0.15s; text-decoration: none; }
+  .link-open-btn:hover { background: var(--color-dark); }
+  .link-open-btn.no-link { background: #e5e7eb; color: #9ca3af; cursor: not-allowed; pointer-events: none; }
+  .link-url-input { flex: 1; background: #f0f4fb; border: 1px solid #d4e0ef; border-radius: 8px; padding: 5px 8px; font-family: 'Cairo', sans-serif; font-size: 10px; color: var(--color-dark); direction: ltr; text-align: left; outline: none; }
+  .link-url-input:focus { border-color: var(--color-primary); }
+
+  /* STATUS */
+  .card-status { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; }
+  .status-select { font-family: 'Cairo', sans-serif; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 999px; border: none; cursor: pointer; outline: none; appearance: none; -webkit-appearance: none; }
+  .status-pending { background: #FEF3C7; color: #92400E; }
+  .status-ready   { background: #DBEAFE; color: #1E40AF; }
+  .status-done    { background: #D1FAE5; color: #065F46; }
+
+  /* SECTION DIVIDER */
+  .section-divider { display: flex; align-items: center; gap: 14px; margin: 40px 0 20px; }
+  .section-divider-badge { background: var(--color-dark); color: var(--color-white); font-size: 12px; font-weight: 700; padding: 6px 18px; border-radius: 999px; white-space: nowrap; }
+  .section-divider-sub { font-size: 13px; font-weight: 600; color: #6b7a99; }
+  .section-divider-line { flex: 1; height: 2px; background: linear-gradient(to left, transparent, var(--color-dark)); border-radius: 2px; }
+
+  /* FOOTER */
+  .page-footer { background: var(--color-dark); text-align: center; padding: 20px; font-size: 12px; color: rgba(255,255,255,0.45); }
+  .page-footer span { color: var(--color-yellow); font-weight: 700; }
+
+  /* SAVE TOAST */
+  .save-toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px); background: #065F46; color: white; font-family: 'Cairo', sans-serif; font-size: 13px; font-weight: 600; padding: 10px 24px; border-radius: 999px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); transition: transform 0.3s ease; z-index: 9999; pointer-events: none; }
+  .save-toast.show { transform: translateX(-50%) translateY(0); }
+
+  @media (max-width: 700px) {
+    .week-cards { grid-template-columns: 1fr; }
+    .content { padding: 20px; }
+    .page-header { padding: 20px; flex-wrap: wrap; }
+    .stats-bar { flex-wrap: wrap; gap: 16px; padding: 12px 20px; }
+    .intro-banner { padding: 16px 20px; }
+    .legend { padding: 12px 20px; flex-wrap: wrap; }
+  }
+
+  @media print {
+    body { background: white; }
+    .page-header, .stats-bar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .video-card, .week-block { break-inside: avoid; }
+    .link-row, .card-status, .caption-tabs, .copy-caption-btn, .link-open-btn { display: none !important; }
+    .caption-panel { display: flex !important; }
+  }
+</style>
+<script id="_store" type="application/json">{"links":{"0":"https://drive.google.com/file/d/1nmEVTIqA_gJRdYBivKadruoXUKyoHwNN/view?usp=share_link","1":"https://drive.google.com/file/d/1v397kBLmNrGTbAFPRlhMKLaShIQjLPqG/view?usp=share_link","2":"https://drive.google.com/file/d/165HxPkejSBpzKdS7817qITWlDDGGC7NY/view?usp=share_link","3":"https://drive.google.com/file/d/1n7ElDo8JOrWb4bTOyeMI1rbQtrsavTHI/view?usp=share_link","4":"https://drive.google.com/file/d/1hMECrKiHmosJ4Cd7BftPCF7fvgRbcM0o/view?usp=share_link","5":"https://drive.google.com/file/d/1vKQFg5eDTz6oS1kGRW_5jGVkS0RoPnnB/view?usp=share_link","6":"https://drive.google.com/file/d/1aZ0C0kb9DkPY0nhUrF_0ZADDkYdlAPSk/view?usp=share_link","7":"https://drive.google.com/file/d/1PjxR26nfBZe2QQahsRT88kKSebTjemSV/view?usp=share_link","8":"https://drive.google.com/file/d/1VArV4x9cIgv-S78jbIubcoqW7Lx_1S01/view?usp=share_link","9":"https://drive.google.com/file/d/1qAv77JexXnUNz1TNEOEXdhXVBRCn1mw5/view?usp=share_link","10":"https://drive.google.com/file/d/1EhPYcYzCo6lOkSAgR50-lPwkrXLjLg-r/view?usp=share_link","11":"https://drive.google.com/file/d/1hXYiDztHfcjDpCxQIStlx2efoFet5J7X/view?usp=share_link","12":"https://drive.google.com/file/d/1Zu5WQn7m44Rvb1SZCMMOddWWELycH2S0/view?usp=share_link","13":"https://drive.google.com/file/d/1nI31VeyGYtpHwJvPW8ax0XS6QIkhqRli/view?usp=share_link","14":"https://drive.google.com/file/d/1ZFwJ8KZ9fCaV3Wz1AJkGTjz-JhgfjRM0/view?usp=share_link","15":"https://drive.google.com/file/d/1LiGsVosEhm0knGtwuvlaDmSi9PqDuvpw/view?usp=share_link","16":"https://drive.google.com/file/d/1lMXuc7hAWktpUsFosD6NXJB9GbnGojSU/view?usp=share_link","17":"https://drive.google.com/file/d/1ko8tfUpTva2Ep0HNB9dA0a6BzG2cS4VE/view?usp=share_link","18":"https://drive.google.com/file/d/1gy_HrwRJ5SZUhZam8_jBeMbHqzZWhnOd/view?usp=share_link","19":"https://drive.google.com/file/d/1XRv-k9W1FLWFPhECMOLcj51IDLFn97xj/view?usp=share_link"},"statuses":{}}</script></head>
+<body>
+
+<div class="page-header">
+  <div id="logoContainer"></div>
+  <div class="page-header-text" style="flex:1;padding:0 24px;">
+    <h1>خطة نشر الفيديوهات</h1>
+    <p>مايو ٢٠٢٦ — يوليو ٢٠٢٦ &nbsp;|&nbsp; حزمة أسئلة تمويلية</p>
+  </div>
+  <div class="header-badge">٢ فيديو أسبوعياً</div>
+</div>
+
+<div class="stats-bar">
+  <div class="stat"><strong>٢٢</strong> فيديو إجمالاً</div>
+  <div class="stat"><strong>٢</strong> أسبوع مايو — يوليو</div>
+  <div class="stat"><strong>٤</strong> منصات</div>
+</div>
+
+<div class="intro-banner">
+  <div class="intro-icon">
+    <svg width="22" height="22" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+  </div>
+  <div class="intro-text">
+    خطة نشر <strong>حزمة أسئلة تمويلية</strong> — سلسلة فيديوهات أسبوعية تجيب على أسئلة أصحاب المنشآت الصغيرة والمتوسطة عن تمويل الرائدة.
+    <div class="intro-cta">اكتب سؤالك — يمكن سؤالك هو الجاي ✍️</div>
+  </div>
+</div>
+
+<div class="legend">
+  <span class="legend-label">نوع المنشور:</span>
+  <div class="legend-item"><span class="dot" style="background:#e5e7eb;"></span> لم ينشر</div>
+  <div class="legend-item"><span class="dot" style="background:#f59e0b;"></span> جاهز</div>
+  <div class="legend-item"><span class="dot" style="background:#22c55e;"></span> تم النشر</div>
+  <span class="legend-label" style="margin-right:12px;">المنصة:</span>
+  <div class="legend-platform">
+    <span class="lpill lpill-yt">YT</span>
+    <span class="lpill lpill-ig">IG</span>
+    <span class="lpill lpill-li">LI</span>
+    <span class="lpill lpill-tt">TT</span>
+  </div>
+</div>
+
+<div class="content" id="calendar"></div>
+
+<div class="page-footer">Alraedah &nbsp;|&nbsp; <span>Marketing</span></div>
+<div class="save-toast" id="saveToast">💾 تم الحفظ — حمّل الملف لتثبيت التغييرات</div>
+
+<script>
+// ── PLATFORM ICONS ──
+const ICONS = {
+  yt: `<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.3-1C17.4 2.7 12 2.7 12 2.7s-5.4 0-8.3.2c-.4.1-1.4.1-2.3 1-.7.7-.9 2.3-.9 2.3S.3 8 .3 9.8v1.7c0 1.7.2 3.5.2 3.5s.2 1.6.9 2.3c.9.9 2 .9 2.5 1 1.9.2 7.9.2 8.1.2s5.4 0 8.3-.3c.4-.1 1.4-.1 2.3-1 .7-.7.9-2.3.9-2.3s.2-1.8.2-3.5V9.8c0-1.7-.2-3.6-.2-3.6zM9.7 15.5V8.3l6.2 3.6-6.2 3.6z"/></svg>`,
+  ig: `<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.2 4.8 1.7 5 5 .1 1.3.1 1.6.1 4.8 0 3.2 0 3.6-.1 4.8-.2 3.3-1.7 4.8-5 5-1.3.1-1.6.1-4.9.1-3.2 0-3.6 0-4.8-.1-3.3-.2-4.8-1.7-5-5C2.1 15.6 2 15.2 2 12c0-3.2 0-3.6.1-4.8.2-3.3 1.7-4.8 5-5 1.3-.1 1.6-.1 4.9-.1zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1.0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7C8.3 24 8.7 24 12 24s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7C24 15.7 24 15.3 24 12s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4A6.2 6.2 0 0 0 12 5.8zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"/></svg>`,
+  li: `<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8v5.4H9.8V9h3.2v1.5h.1c.5-.9 1.6-1.8 3.2-1.8 3.4 0 4 2.2 4 5.1v6.6zM5.3 7.4a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm1.7 13H3.6V9h3.4v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6C0 23.2.8 24 1.8 24h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg>`,
+  tt: `<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19.6 3.3A4.5 4.5 0 0 1 15.2 0h-3.3v16.4a2.7 2.7 0 0 1-2.7 2.4 2.7 2.7 0 0 1-2.7-2.7 2.7 2.7 0 0 1 2.7-2.7c.3 0 .5 0 .7.1V10a6 6 0 0 0-.7 0 6 6 0 0 0-6 6 6 6 0 0 0 6 6 6 6 0 0 0 6-6V8.2a7.8 7.8 0 0 0 4.6 1.5V6.4a4.5 4.5 0 0 1-2.7-.9z"/></svg>`
+};
+
+const videos = [
+  {
+    week: 0, weekLabel: "الإنترو — فيديو التعريف بالسلسلة",
+    num: 0, day: "الأحد", date: "٣ مايو ٢٠٢٦",
+    topic: "Intro — تعريف بالسلسلة",
+    captions: {
+      yt:  `هل سألت يوماً: كيف تحصل على تمويل لمنشأتك الصغيرة؟\n\nأسئلة تكررت من أصحاب المنشآت — جمعناها، والإجابة من المصدر مباشرة، بوضوح وبدون تعقيد.\n\nكل أسبوع — مقطعان يجيبان على أهم أسئلة تمويل المنشآت الصغيرة والمتوسطة.\n\n💬 اكتب سؤالك — وسؤالك قد يكون المقطع الجاي!`,
+      ig:  `أسئلة تمويل المنشآت — الإجابة من المصدر 🎯\n\nكل أسبوع مقطعان يجيبان على أسئلتكم الحقيقية عن التمويل.\n\n💬 اكتب سؤالك في التعليقات!`,
+      li:  `كثير من أصحاب المنشآت الصغيرة والمتوسطة يجهلون حقوقهم وخياراتهم في التمويل.\n\nلذلك بدأنا هذه السلسلة — إجابات واضحة على أسئلة حقيقية من السوق السعودي.\n\nمقطعان أسبوعياً، من المصدر مباشرة.\n\n💬 ما سؤالك عن تمويل منشأتك؟`,
+      tt:  `أسئلة تمويل المنشآت اللي ما تجرأ تسألها 😅\n\nجمعناها وجاوبنا عليها بمقطعين كل أسبوع 🔥\n\n💬 اكتب سؤالك!`
+    },
+    hashtags: "#الرائدة_للتمويل #حزمة_أسئلة_تمويلية #تمويل_المنشآت",
+    isIntro: true
+  },
+  {
+    week: 1, weekLabel: "الأسبوع الأول",
+    num: 1, day: "الأحد", date: "٤ مايو ٢٠٢٦",
+    topic: "كيف أقدم طلب التمويل؟",
+    captions: {
+      yt:  `صاحب المنشأة — إذا كنت تتساءل "كيف أبدأ في طلب تمويل منشأتي؟" فهذا المقطع جاوب سؤالك.\n\nتمويل المنشآت الصغيرة والمتوسطة من الرائدة يبدأ بخطوة واحدة بسيطة: تقديم الطلب إلكترونياً عبر موقعنا، وفريقنا يتواصل معك بأسرع وقت.\n\nالرائدة — شريك تمويل المنشآت في السعودية 🚀\n\n💬 اكتب سؤالك في التعليقات وسؤالك قد يكون المقطع الجاي!`,
+      ig:  `📲 ما تعرف من وين تبدأ في تمويل منشأتك؟\n\nخطوة واحدة تكفي — قدّم طلبك إلكترونياً وفريق الرائدة يتواصل معك فوراً ✅\n\nتمويل المنشآت الصغيرة ما كان أسهل من كذا!\n\n💬 اكتب سؤالك ⬇️`,
+      li:  `سؤال يشغل بال كثير من أصحاب المنشآت الصغيرة والمتوسطة في السعودية:\n\n"كيف أحصل على تمويل لمنشأتي؟"\n\nالإجابة أبسط مما تتوقع — خطوة إلكترونية واحدة وفريق الرائدة يكمل معك الباقي.\n\nالرائدة للتمويل: حلول تمويلية مرنة ومتوافقة مع الشريعة للمنشآت السعودية.\n\n💬 هل جربت التقديم من قبل؟ شاركنا تجربتك.`,
+      tt:  `"كيف أحصل على تمويل لمنشأتي؟!" 🤔\n\nالجواب أبسط مما تتخيل — شوف المقطع 👆\n\nتمويل منشأتك في خطوات بسيطة مع الرائدة 💪\n\n#fyp #تمويل_المنشآت`
+    },
+    hashtags: "#الرائدة_للتمويل #تمويل_المنشآت #SME_تمويل"
+  },
+  {
+    week: 1, weekLabel: "",
+    num: 2, day: "الأربعاء", date: "٧ مايو ٢٠٢٦",
+    topic: "هل تقبلون المنشآت الجديدة؟",
+    captions: {
+      yt:  `الكثير من رواد الأعمال يظنون أن منشأتهم الجديدة لن تُقبل للتمويل — هذا الاعتقاد خاطئ!\n\nالرائدة للتمويل تقبل المنشآت بعد ٣ أشهر فقط من التشغيل.\n\nلأن كل منشأة ناجحة بدأت من يوم أول، ونحن شركاء من البداية 🚀\n\n💬 عندك سؤال؟ اكتبه أدناه!`,
+      ig:  `🆕 منشأتك جديدة؟ ما يهم!\n\nبعد ٣ أشهر تشغيل فقط تقدر تتقدم لتمويل منشأتك مع الرائدة.\n\nلأن كل بزنس ناجح بدأ من يوم أول 💪\n\n💬 اكتب سؤالك ⬇️`,
+      li:  `سؤال شائع بين رواد الأعمال: هل المنشأة الجديدة مؤهلة للتمويل؟\n\nالإجابة: نعم — بشرط أن يكون النشاط قائماً لأكثر من ٣ أشهر.\n\nالرائدة للتمويل تؤمن بأن دعم المنشآت الصغيرة والمتوسطة منذ البداية هو صميم رؤية ٢٠٣٠ لتمكين القطاع الخاص.\n\n💬 هل تعتقد أن ٣ أشهر كافية للحكم على المنشأة؟`,
+      tt:  `"منشأتي جديدة — ما راح يمولونني!" 😟\n\nاصبر 😄 بعد ٣ أشهر بس تقدر تتقدم!\n\nابدأ الآن 🚀 #تمويل_المنشآت #fyp`
+    },
+    hashtags: "#الرائدة_للتمويل #منشأة_جديدة #تمويل_الأعمال"
+  },
+  {
+    week: 2, weekLabel: "الأسبوع الثاني",
+    num: 3, day: "الأحد", date: "١١ مايو ٢٠٢٦",
+    topic: "هل تقبلون قطاعات معينة؟",
+    captions: {
+      yt:  `"الرائدة تمول قطاعي؟" — سؤال يسأله كثير من أصحاب المنشآت قبل التقديم!\n\nالرائدة تموّل معظم القطاعات التجارية والخدمية والصناعية، مع استثناءات محدودة مرتبطة بطبيعة النشاط.\n\nالقاعدة: إذا كان نشاطك مرخصاً وعنده تدفق نقدي — غالباً أنت مؤهل.\n\n💬 اكتب قطاعك في التعليقات وناقشنا ⬇️`,
+      ig:  `🏭 الرائدة تمول قطاعك؟\n\nمعظم القطاعات مقبولة:\n✅ تجارة\n✅ خدمات\n✅ صناعة\n✅ مطاعم وضيافة\n\nنشاط مرخص + تدفق نقدي = مؤهل في الغالب 🎯\n\n💬 اكتب قطاعك وناقشنا ⬇️`,
+      li:  `أحد الأسئلة الجوهرية التي يطرحها أصحاب المنشآت قبل التقديم: هل قطاعي مقبول لدى جهة التمويل؟\n\nالرائدة للتمويل تدعم طيفاً واسعاً من القطاعات — التجارية، الخدمية، الصناعية، والغذائية — مع استثناءات محدودة وفق معايير الامتثال والجدوى.\n\nالمعيار الجوهري: نشاط مرخص، ذو تدفق نقدي قابل للقياس، وقدرة سداد حقيقية.\n\n💬 ما القطاع الذي تعتقد أنه يواجه أكبر تحدٍّ في الحصول على تمويل في السوق السعودي؟`,
+      tt:  `"قطاعي تمولونه؟" سؤال الجميع 🤔\n\nالجواب: معظم القطاعات — شوف المقطع 👆\n\n#الرائدة_للتمويل #تمويل_المنشآت #fyp`
+    },
+    hashtags: "#الرائدة_للتمويل #تمويل_المنشآت #قطاعات"
+  },
+  {
+    week: 2, weekLabel: "",
+    num: 4, day: "الأربعاء", date: "١٤ مايو ٢٠٢٦",
+    topic: "هل التمويل متوافق مع الشريعة الإسلامية؟",
+    captions: {
+      yt:  `سؤال يشغل بال كل صاحب منشأة مسلم: هل التمويل الذي سأحصل عليه حلال؟\n\nالجواب القاطع: نعم — تمويل الرائدة متوافق مع أحكام الشريعة الإسلامية بالكامل، تحت إشراف لجنة شرعية من علماء متخصصين 🕌\n\nموّل منشأتك وأنت مطمئن تماماً.\n\n💬 سؤالك الجاي؟ اكتبه!`,
+      ig:  `✅ تمويل منشأتك مع الرائدة — حلال ومتوافق مع الشريعة!\n\nلجنة شرعية متخصصة تشرف على كل منتجاتنا 🕌\n\nبزنسك يكبر وأنت مطمئن 💚\n\n💬 سؤالك الجاي؟ ⬇️`,
+      li:  `في السياق المالي السعودي، يُعدّ الامتثال للشريعة الإسلامية معياراً أساسياً لأصحاب المنشآت عند اختيار جهة التمويل.\n\nالرائدة للتمويل تُقدم حلولاً تمويلية متوافقة مع الشريعة بالكامل، تحت إشراف لجنة شرعية من العلماء المتخصصين.\n\nالتمويل الإسلامي للمنشآت الصغيرة والمتوسطة ليس خياراً ثانياً — إنه معيار الثقة الأول.\n\n💬 هل يؤثر التوافق مع الشريعة في قرارك عند اختيار جهة التمويل؟`,
+      tt:  `"التمويل حلال؟" 🤔\n\nيس! ✅ الرائدة عندها لجنة شرعية متخصصة.\n\nموّل منشأتك وأنت مرتاح البال 😌🕌 #fyp`
+    },
+    hashtags: "#الرائدة_للتمويل #تمويل_إسلامي #متوافق_شريعة"
+  },
+  {
+    week: 3, weekLabel: "الأسبوع الثالث",
+    num: 5, day: "الأحد", date: "١٨ مايو ٢٠٢٦",
+    topic: "كيف أعرف إذا انا مؤهل للتمويل؟",
+    captions: {
+      yt:  `قبل ما تتقدم لتمويل منشأتك — تحقق من هذه النقاط الأربع:\n\n✔️ نشاطك قائم أكثر من ٣ أشهر\n✔️ عندك تدفق نقدي مستقر نسبياً\n✔️ قادر على السداد من إيرادات المنشأة\n✔️ سجلك الائتماني في وضع جيد\n\nإذا تحققت فيك هذه النقاط — قدّم الآن! 💡\n\n💬 اكتب سؤالك ⬇️`,
+      ig:  `🎯 ٤ نقاط تخبرك هل منشأتك مؤهلة للتمويل:\n\n✔️ نشاط +٣ أشهر\n✔️ تدفق نقدي مستقر\n✔️ قدرة سداد من الإيرادات\n✔️ سجل ائتماني جيد\n\nتحققت فيك؟ قدّم الطلب الآن مع الرائدة 🚀\n\n💬 اكتب سؤالك ⬇️`,
+      li:  `كيف يقيّم أصحاب المنشآت تأهّلهم للتمويل قبل التقديم؟\n\nأربعة معايير جوهرية تُحدد المؤهلية:\n١. استمرارية النشاط (٣ أشهر فأكثر)\n٢. وضوح التدفق النقدي\n٣. القدرة على السداد من الإيرادات التشغيلية\n٤. السجل الائتماني لدى سمة\n\nمعرفة هذه المعايير تمنح صاحب المنشأة صورة واضحة قبل التقديم.\n\n💬 أيّ هذه المعايير يمثّل تحدياً أمام المنشآت في السعودية؟`,
+      tt:  `"هل أنا أستاهل التمويل؟" سؤال كل صاحب منشأة 😅\n\n٤ نقاط تجاوب — شوف المقطع 👆\n\nتمويل منشأتك يبدأ بمعرفة نفسك أولاً 💡 #fyp`
+    },
+    hashtags: "#الرائدة_للتمويل #تأهيل_التمويل #SME"
+  },
+  {
+    week: 3, weekLabel: "",
+    num: 6, day: "الأربعاء", date: "٢١ مايو ٢٠٢٦",
+    topic: "وش العوامل اللي ترفع فرص حصولك على التمويل بسرعة؟",
+    captions: {
+      yt:  `إذا كنت تبغى موافقة تمويل منشأتك تكون أسرع — هذي النصايح الأربع تفرق:\n\n🔹 جهّز كشف حساب لآخر ٣–١٢ شهر\n🔹 افصل حسابات المنشأة عن حساباتك الشخصية\n🔹 الاستقرار في مبيعاتك يبني ثقة الممول\n🔹 قلّل السحب النقدي غير المبرر\n\nالتحضير الصح = تمويل منشأتك أسرع ✅\n\n💬 سؤالك الجاي؟ اكتبه!`,
+      ig:  `📈 تبي موافقة تمويل منشأتك تكون أسرع؟\n\n🔹 افصل حسابات البزنس عن الشخصي\n🔹 استقرار المبيعات = ثقة أكبر للممول\n🔹 جهّز كشف حساب ٣–١٢ شهر\n\nالتحضير الصح = تمويل أسرع ✅\n\n💬 سؤالك الجاي؟ اكتبه! ⬇️`,
+      li:  `من أكثر الأسباب التي تؤخر الموافقة على تمويل المنشآت الصغيرة والمتوسطة:\n\n• خلط الحسابات الشخصية مع حسابات المنشأة\n• تذبذب الإيرادات الشهرية دون مبرر واضح\n• ضعف التوثيق المصرفي\n\nفصل الحسابات واستقرار التدفق النقدي يرفعان الجدارة الائتمانية بشكل ملموس.\n\n💬 ما هي أبرز التحديات التي تواجه المنشآت عند طلب التمويل في رأيك؟`,
+      tt:  `أسرار ترفع فرصتك في الحصول على تمويل منشأتك 🔥\n\nشوف المقطع — ٤ نصايح تغير اللعبة 💪\n\n#تمويل_المنشآت #بزنس #fyp`
+    },
+    hashtags: "#الرائدة_للتمويل #نصائح_التمويل #رفع_فرص_الموافقة"
+  },
+  {
+    week: 4, weekLabel: "الأسبوع الرابع",
+    num: 7, day: "الأحد", date: "٢٥ مايو ٢٠٢٦",
+    topic: "هل يحتاج كفيل أو ضمانات؟",
+    captions: {
+      yt:  `"هل تمويل المنشأة يحتاج كفيل؟" — خوف يوقف كثير من أصحاب المنشآت عن التقديم!\n\nبالأصل: لا نشترط كفيلاً ولا ضمانات في معظم الحالات 🙅\n\nبعض الحالات الخاصة قد تختلف حسب التقييم — لكن الغالبية لا تحتاج ذلك.\n\nتمويل مرن، يناسب طبيعة المنشآت الصغيرة والمتوسطة 💪\n\n💬 اكتب سؤالك ⬇️`,
+      ig:  `🙅 لا كفيل ولا ضمانات في الغالب!\n\nتمويل منشأتك مع الرائدة مرن وبدون تعقيدات.\n\nبعض الحالات الخاصة تختلف حسب التقييم — لكن الأغلبية بدون ضمانات 💪\n\n💬 اكتب سؤالك ⬇️`,
+      li:  `أحد أبرز العوائق التي تُحجم أصحاب المنشآت الصغيرة عن طلب التمويل: الخوف من اشتراط الكفيل والضمانات.\n\nفي الرائدة، لا نشترط ذلك في معظم حالات تمويل المنشآت الصغيرة والمتوسطة.\n\nالتمويل المرن الذي يتناسب مع واقع المنشآت السعودية الناشئة هو ما نسعى إليه.\n\n💬 هل اشتراط الضمانات كان عائقاً أمامك؟`,
+      tt:  `"التمويل يحتاج كفيل؟!" 😨\n\nلا! 🙅 الغالبية بدون كفيل أو ضمانات.\n\nتمويل منشأتك أسهل مما تتخيل مع الرائدة 💪 #fyp`
+    },
+    hashtags: "#الرائدة_للتمويل #بدون_كفيل #تمويل_مرن"
+  },
+  {
+    week: 4, weekLabel: "",
+    num: 8, day: "الأربعاء", date: "٢٨ مايو ٢٠٢٦",
+    topic: "كيف آلية السداد في تمويل نقاط البيع؟",
+    captions: {
+      yt:  `ما تدفع قسطاً ثابتاً كل شهر — السداد يتم تلقائياً مع مبيعاتك!\n\nفي تمويل نقاط البيع من الرائدة، نستقطع نسبة محددة من مبيعاتك اليومية عبر أجهزة POS — تلقائياً وبدون جهد منك.\n\nكل ما بعت أكثر، سددت أسرع 🛒\n\n💬 سؤالك الجاي؟ اكتبه! ⬇️`,
+      ig:  `🔄 السداد يصير تلقائياً مع مبيعاتك!\n\nتمويل نقاط البيع من الرائدة — نسبة محددة تُستقطع يومياً من مبيعاتك.\n\nما في قسط ثابت يضغط عليك كل شهر 🛒\n\n💬 سؤالك الجاي؟ اكتبه! ⬇️`,
+      li:  `آلية السداد المرتبطة بالإيرادات الفعلية — نموذج تمويلي مبتكر يلائم المنشآت الصغيرة والمتوسطة.\n\nفي تمويل نقاط البيع من الرائدة، تُستقطع نسبة محددة من مبيعاتك اليومية تلقائياً — مما يعني أن السداد يتناسب مع أداء المنشأة الفعلي.\n\nهذا النموذج يقلل الضغط المالي في فترات انخفاض المبيعات ويدعم الاستدامة.\n\n💬 هل تفضل هذا النموذج على القسط الثابت الشهري؟`,
+      tt:  `ما تدفع قسط ثابت كل شهر! 😮\n\nالسداد تلقائي من مبيعاتك اليومية عبر الـ POS 🛒\n\nكل ما بعت، سددت — ذكي! 💡 #تمويل_المنشآت #fyp`
+    },
+    hashtags: "#الرائدة_للتمويل #نقاط_البيع #POS_تمويل"
+  },
+  {
+    week: 5, weekLabel: "الأسبوع الخامس",
+    num: 9, day: "الأحد", date: "١ يونيو ٢٠٢٦",
+    topic: "وش الفرق بين الاستقطاع اليومي والأقساط الشهرية؟",
+    captions: {
+      yt:  `خيارين لسداد تمويل منشأتك — أيهما يناسبك؟\n\n📌 الاستقطاع اليومي: يُحسب تلقائياً من مبيعاتك عبر نقاط البيع — مرن ومتناسب مع إيراداتك\n📌 الأقساط الشهرية: حوالة ثابتة في تاريخ محدد كل شهر\n\nأنت تختار ما يناسب طبيعة منشأتك 🎯\n\n💬 عندك سؤال؟ اكتبه أدناه ⬇️`,
+      ig:  `⚖️ خيارين لسداد تمويل منشأتك:\n\n📌 استقطاع يومي تلقائي من مبيعات POS\n📌 أقساط شهرية ثابتة بحوالة\n\nاختر ما يناسب طبيعة بزنسك! 🎯\n\n💬 عندك سؤال؟ اكتبه أدناه ⬇️`,
+      li:  `مرونة خيارات السداد — عامل جوهري في تمويل المنشآت الصغيرة والمتوسطة.\n\nالرائدة توفر خيارين:\n• استقطاع يومي مرن يتناسب مع حجم المبيعات الفعلي عبر نقاط البيع\n• قسط شهري ثابت يناسب المنشآت ذات الإيرادات المنتظمة\n\nالمرونة في السداد تعكس فهماً حقيقياً لاحتياجات المنشآت السعودية.\n\n💬 أيّ نموذج تراه أنسب للمنشآت الصغيرة؟`,
+      tt:  `يومي ولا شهري؟ 🤔 خيارك أنت!\n\nتمويل منشأتك مع الرائدة فيه خيارين للسداد — شوف أيهما يناسبك 💡\n\n#تمويل_مرن #منشآت #fyp`
+    },
+    hashtags: "#الرائدة_للتمويل #آلية_السداد #تمويل_مرن"
+  },
+  {
+    week: 5, weekLabel: "",
+    num: 10, day: "الأربعاء", date: "٤ يونيو ٢٠٢٦",
+    topic: "هل يجب أن تكون المبيعات من نقاط البيع فقط؟",
+    captions: {
+      yt:  `إذا جزء كبير من مبيعات منشأتك يأتي عبر حوالات بنكية لا POS — لا تقلق!\n\nنراجع كشف الحساب البنكي ونأخذ بعين الاعتبار المبيعات من كل المصادر:\n✅ نقاط البيع\n✅ الحوالات البنكية\n\nتمويلك لا يتوقف على طريقة استلام مبيعاتك 💡\n\n💬 اكتب سؤالك ⬇️`,
+      ig:  `❌ مو شرط مبيعاتك كلها من نقاط البيع!\n\nنراجع كشف الحساب البنكي ونعتبر:\n✅ مبيعات POS\n✅ الحوالات البنكية\n\nتمويل منشأتك ما يتوقف على طريقة استلام مبيعاتك 💡\n\n💬 اكتب سؤالك ⬇️`,
+      li:  `كثير من أصحاب المنشآت يعتقدون أن عدم وجود نقاط بيع يحول دون حصولهم على التمويل.\n\nالواقع: الرائدة تعتمد كشف الحساب البنكي كمرجع رئيسي، وتأخذ بعين الاعتبار جميع مصادر الإيرادات — سواء نقاط البيع أو الحوالات البنكية.\n\nتنوع مصادر الإيراد لا يمنع — بل قد يُعزز — الجدارة التمويلية للمنشأة.\n\n💬 ما هو المصدر الرئيسي لإيرادات منشأتك؟`,
+      tt:  `"مبيعاتي مو من POS — ما راح يمولوني!" 😟\n\nغلط! ❌ الحوالات البنكية تُحسب هي الأخرى ✅\n\n#الرائدة_للتمويل #تمويل_المنشآت #fyp`
+    },
+    hashtags: "#الرائدة_للتمويل #تمويل_الأعمال #حوالات_بنكية"
+  },
+  {
+    week: 6, weekLabel: "الأسبوع السادس",
+    num: 11, day: "الأحد", date: "٨ يونيو ٢٠٢٦",
+    topic: "كم نسبة الاستقطاع اليومي؟",
+    captions: {
+      yt:  `"كم ستُستقطع من مبيعاتي يومياً؟" — سؤال محوري لكل صاحب منشأة!\n\nما في نسبة ثابتة للجميع — النسبة تتحدد حسب:\n🔸 متوسط مبيعاتك الشهرية\n🔸 الفائض النقدي المتوفر\n🔸 قدرة منشأتك الفعلية على السداد\n\nكل منشأة حالة مستقلة نعالجها بشكل مخصص 🎯\n\n💬 سؤالك الجاي؟ اكتبه! ⬇️`,
+      ig:  `📊 نسبة الاستقطاع اليومي — مخصصة لمنشأتك!\n\nتتحدد حسب:\n🔸 متوسط مبيعاتك\n🔸 الفائض النقدي\n🔸 قدرة السداد الفعلية\n\nكل حالة نعاملها بشكل مختلف 🎯\n\n💬 سؤالك الجاي؟ اكتبه! ⬇️`,
+      li:  `التسعير المخصص في تمويل المنشآت — لماذا لا توجد نسبة استقطاع موحدة للجميع؟\n\nلأن كل منشأة تختلف في:\n• متوسط إيراداتها الشهرية\n• الفائض النقدي المتاح بعد التكاليف\n• طبيعة نشاطها وتذبذب مبيعاتها\n\nالنهج المخصص في احتساب نسبة الاستقطاع يعكس فهماً عميقاً لواقع المنشآت الصغيرة والمتوسطة في السعودية.\n\n💬 هل تفضل التخصيص أم الشفافية عبر نسبة موحدة؟`,
+      tt:  `"كم يستقطعون مني يومياً؟!" 🤔\n\nما في نسبة ثابتة — كل منشأة وحالتها 🎯\n\nيحددون الأنسب لك أنت! #تمويل_ذكي #fyp`
+    },
+    hashtags: "#الرائدة_للتمويل #نسبة_الاستقطاع #POS"
+  },
+  {
+    week: 6, weekLabel: "",
+    num: 12, day: "الأربعاء", date: "١١ يونيو ٢٠٢٦",
+    topic: "إذا انخفضت المبيعات ولم أستطيع السداد، ما الإجراء؟",
+    captions: {
+      yt:  `مبيعات منشأتك انخفضت وأصبح السداد صعباً؟ لا تصمت — تواصل!\n\nفريق نجاح العميل في الرائدة موجود خصيصاً لهذه اللحظة:\n✅ إعادة جدولة التمويل\n✅ منح مهلة مناسبة\n✅ إيجاد الحل الأنسب لوضعك\n\nالمنشآت الصغيرة تمر بظروف — ونحن نفهم ذلك 🤝\n\n💬 اكتب سؤالك ⬇️`,
+      ig:  `📉 مبيعاتك انخفضت وما قدرت تسدد؟\n\nلا تتردد — تواصل مع فريق نجاح العميل في الرائدة:\n✅ إعادة جدولة\n✅ مهلة مناسبة\n✅ الحل الأنسب لوضعك\n\nنحن معك دائماً 🤝\n\n💬 اكتب سؤالك ⬇️`,
+      li:  `من أهم ما يجب أن يعلمه أصحاب المنشآت الصغيرة والمتوسطة: ماذا يفعلون عند صعوبة السداد؟\n\nالرائدة للتمويل لديها فريق مخصص لنجاح العميل يتعامل مع هذه الحالات بخيارات عملية:\n• إعادة جدولة الدفعات\n• منح مهلة مؤقتة\n• هيكلة حل مناسب للوضع\n\nدعم المنشآت في مراحل الضغط — جزء أصيل من فلسفتنا في الشراكة.\n\n💬 كيف تتعامل شركات التمويل مع هذا الوضع في تجربتك؟`,
+      tt:  `المبيعات انخفضت وما تقدر تسدد؟ 😰\n\nلا تتردد — تواصل مع الرائدة فوراً!\n\nفريق نجاح العميل يحل معك 🤝 #دعم_المنشآت #fyp`
+    },
+    hashtags: "#الرائدة_للتمويل #نجاح_العميل #دعم_المنشآت"
+  },
+  {
+    week: 7, weekLabel: "الأسبوع السابع",
+    num: 13, day: "الأحد", date: "١٥ يونيو ٢٠٢٦",
+    topic: "إذا تم تغبير الحساب البنكي هل يتغير مبلغ التمويل؟",
+    captions: {
+      yt:  `غيّرت حسابك البنكي خلال فترة تمويل المنشأة؟ لا مشكلة!\n\nمبلغ الاستحقاق لا يتأثر بمجرد تغيير الحساب — نحتسب إيرادات الحسابين معاً عند التقييم 📊\n\nالمهم أن تُخطرنا لنضمن استمرارية التمويل بسلاسة.\n\n💬 عندك سؤال؟ اكتبه أدناه ⬇️`,
+      ig:  `🏦 غيّرت حسابك البنكي؟ ما في مشكلة!\n\nمبلغ الاستحقاق ما يتأثر — نحتسب إيرادات الحسابين معاً 📊\n\nتمويل منشأتك مستمر بسلاسة ✅\n\n💬 عندك سؤال؟ اكتبه أدناه ⬇️`,
+      li:  `سيناريو شائع في حياة أصحاب المنشآت: تغيير الحساب البنكي خلال فترة التمويل.\n\nفي الرائدة، هذا لا يُعطّل التمويل — نعتمد على مجمل الإيرادات الواردة في كلا الحسابين عند التقييم.\n\nالمرونة في التعامل مع المتغيرات التشغيلية للمنشآت جزء من منهجيتنا.\n\n💬 هل واجهت تحديات مشابهة في تمويل منشأتك؟`,
+      tt:  `"غيّرت بنكي — هل يتأثر التمويل؟!" 😰\n\nلا! ✅ نحتسب الحسابين معاً ما تقلق 📊\n\n#الرائدة_للتمويل #تمويل_المنشآت #fyp`
+    },
+    hashtags: "#الرائدة_للتمويل #حساب_بنكي #تمويل_المنشآت"
+  },
+  {
+    week: 7, weekLabel: "",
+    num: 14, day: "الأربعاء", date: "١٨ يونيو ٢٠٢٦",
+    topic: "هل ممكن تسديد التمويل قبل موعده؟",
+    captions: {
+      yt:  `تمويل منشأتك يسير بشكل ممتاز وتريد السداد المبكر؟ هذا ممكن!\n\nعميل الرائدة يمكنه طلب السداد المبكر، ويخضع لتقييم وموافقة الشركة.\n\nتواصل مع فريقنا وناقش الخيار الأمثل لوضعك 💬\n\n💬 اكتب سؤالك ⬇️`,
+      ig:  `🕐 تبي تسدد تمويل منشأتك قبل الموعد؟\n\nيمكن! السداد المبكر متاح بموافقة الشركة.\n\nتواصل مع فريق الرائدة ونناقش الخيار الأنسب 💬\n\n💬 اكتب سؤالك ⬇️`,
+      li:  `السداد المبكر في تمويل المنشآت — حق أم ميزة؟\n\nفي الرائدة، يمكن لعميل التمويل طلب السداد المبكر، وهو خاضع لتقييم وموافقة الشركة وفق الآليات المتفق عليها.\n\nهذا الخيار يمنح أصحاب المنشآت المرونة في إدارة التزاماتهم المالية حين تتحسن أوضاعهم.\n\n💬 هل تعتقد أن السداد المبكر يجب أن يكون حقاً مطلقاً للعميل؟`,
+      tt:  `"أبي أسدد قبل الموعد — في غرامة؟!" 😬\n\nشوف المقطع — الجواب يفاجئك! 🤫\n\n#تمويل_المنشآت #سداد_مبكر #fyp`
+    },
+    hashtags: "#الرائدة_للتمويل #سداد_مبكر #تمويل_مرن"
+  },
+  {
+    week: 8, weekLabel: "الأسبوع الثامن",
+    num: 15, day: "الأحد", date: "٢٢ يونيو ٢٠٢٦",
+    topic: "إذا دفعت أكثر من القسط الشهري هل يحسب دفعة مسبقة؟",
+    captions: {
+      yt:  `إذا دفعت أكثر من القسط المقرر لتمويل منشأتك — الفائض لا يضيع!\n\nأي مبلغ إضافي يُحتسب مسبقاً ويؤدي إلى:\n✅ تقليل مدة تمويل المنشأة\n✅ إنهاء التمويل قبل موعده الأصلي\n\nكلما دفعت أكثر، كلما تحررت أسرع ⚡\n\n💬 سؤالك الجاي؟ اكتبه! ⬇️`,
+      ig:  `💸 دفعت أكثر من القسط؟ يُحتسب لصالحك!\n\nالدفع الزائد يقلل مدة تمويل منشأتك وينهي الالتزام قبل موعده ✅\n\nكلما دفعت أكثر، كلما انتهيت أسرع ⚡\n\n💬 سؤالك الجاي؟ اكتبه! ⬇️`,
+      li:  `من أفضل الممارسات المالية لأصحاب المنشآت: استثمار الفائض النقدي في تسريع سداد التمويل.\n\nفي الرائدة، أي دفعة تتجاوز القسط المقرر تُحتسب مباشرة على رصيد التمويل، مما يقلص المدة الزمنية للالتزام.\n\nإدارة التدفق النقدي الذكية في المنشآت الصغيرة والمتوسطة تبدأ بقرارات مثل هذه.\n\n💬 هل تضع استراتيجية لتسريع سداد التزاماتك التمويلية؟`,
+      tt:  `دفعت أكثر من القسط؟ 💸\n\nتمييييز! يُحسب لك وتنهي التمويل أبكر ⚡\n\n#تمويل_ذكي #منشآت #fyp`
+    },
+    hashtags: "#الرائدة_للتمويل #سداد_مبكر #تمويل_ذكي"
+  },
+  {
+    week: 8, weekLabel: "",
+    num: 16, day: "الأربعاء", date: "٢٥ يونيو ٢٠٢٦",
+    topic: "هل تأثر التعثرات السابقة على طلب التمويل؟",
+    captions: {
+      yt:  `"سجلي في سمة فيه تعثرات — هل أقدر أتمول؟"\n\nهذا السؤال يمنع كثير من أصحاب المنشآت من التقديم — لكن الإجابة مختلفة مما تتوقع!\n\nالرائدة تدرس كل حالة بشكل كامل ومنصف. التاريخ الائتماني مهم لكنه لا يُغلق الباب 🚪\n\nالتاريخ الجيد يفتح فرصاً أكبر — والبداية بتقديم الطلب.\n\n💬 اكتب سؤالك ⬇️`,
+      ig:  `📋 عندك تعثرات في سمة؟ ما يمنع التقديم!\n\nندرس حالتك بشكل كامل ومنصف.\n\nسجلك الائتماني مهم — لكنه لا يُغلق الباب 🚪\n\nقدّم وخلّنا نقيّم معك 💪\n\n💬 اكتب سؤالك ⬇️`,
+      li:  `السجل الائتماني (سمة) في السعودية — كيف يؤثر على تمويل المنشآت الصغيرة والمتوسطة؟\n\nالسجل الائتماني أحد معايير التقييم الجوهرية، لكنه ليس المعيار الوحيد.\n\nفي الرائدة، نعتمد تقييماً شاملاً يأخذ بعين الاعتبار الوضع الراهن للمنشأة وقدرتها الفعلية على السداد — لأن الهدف دعم أصحاب المنشآت، لا إقصاؤهم.\n\n💬 كيف تعتقد أنه يجب التعامل مع التعثرات السابقة عند تقييم طلبات التمويل؟`,
+      tt:  `"سجلي في سمة سيء — ما راح يمولوني!" 😔\n\nلحظة! 🛑 الرائدة تدرس حالتك كاملة.\n\nقدّم الطلب — لا تحكم مسبقاً 💪 #سمة #تمويل_المنشآت #fyp`
+    },
+    hashtags: "#الرائدة_للتمويل #سمة #السجل_الائتماني"
+  },
+  {
+    week: 9, weekLabel: "الأسبوع التاسع",
+    num: 17, day: "الأحد", date: "٢٩ يونيو ٢٠٢٦",
+    topic: "كم أعلى مبلغ أقدر آخذه؟",
+    captions: {
+      yt:  `"كم أقدر أتمول؟" — السؤال الصح مختلف تماماً!\n\nالسؤال الأهم: كم تقدر منشأتك على السداد؟\n\nالمبلغ يتحدد حسب:\n🔸 ما يبقى من دخل المنشأة بعد المصاريف\n🔸 التزاماتك الحالية\n🔸 قدرة التدفق النقدي\n\nتمويل مناسب لقدرة منشأتك = نمو مستدام 📈\n\n💬 اكتب سؤالك ⬇️`,
+      ig:  `💰 "كم أقدر أتمول؟"\n\nالسؤال الأصح: "كم تقدر منشأتي تسدد؟"\n\nالمبلغ يعتمد على:\n🔸 الدخل المتبقي بعد المصاريف\n🔸 التزاماتك الحالية\n🔸 التدفق النقدي\n\nتمويل يناسب قدرتك = نمو مستدام 📈\n\n💬 اكتب سؤالك ⬇️`,
+      li:  `أحد أكثر الأسئلة شيوعاً من أصحاب المنشآت الصغيرة والمتوسطة: "كم أعلى مبلغ تمويل يمكنني الحصول عليه؟"\n\nالإجابة المنطقية: المبلغ الأمثل ليس الأعلى — بل ما يتناسب مع الطاقة الفعلية للمنشأة على السداد.\n\nفي الرائدة، نحتسب المبلغ الملائم بناء على الفائض النقدي والالتزامات القائمة، لضمان أن التمويل يدعم النمو لا يُثقل كاهل المنشأة.\n\n💬 كيف تحدد أنت المبلغ الأمثل لتمويل منشأتك؟`,
+      tt:  `"أبي أتمول أكبر مبلغ ممكن!" 😅\n\nلحظة — السؤال الصح: كم تقدر تسدد؟ 🤔\n\nشوف المقطع وتعلم الفرق 💡 #تمويل_ذكي #fyp`
+    },
+    hashtags: "#الرائدة_للتمويل #مبلغ_التمويل #تمويل_المنشآت"
+  },
+  {
+    week: 9, weekLabel: "",
+    num: 18, day: "الأربعاء", date: "٢ يوليو ٢٠٢٦",
+    topic: "ليش أختار الرائدة؟",
+    captions: {
+      yt:  `ما الذي يميز الرائدة في سوق تمويل المنشآت الصغيرة والمتوسطة؟\n\nليست مجرد شركة تمويل — بل شريك يفهم طبيعة منشأتك:\n✅ نظام تحصيل مرن يتناسب مع تذبذب المبيعات\n✅ فهم عميق لتحديات المنشآت الصغيرة والمتوسطة\n✅ فريق نجاح العميل دائماً معك\n\nالأفكار عليك — والتمويل علينا 💡\n\n💬 سؤالك الجاي؟ اكتبه! ⬇️`,
+      ig:  `🏆 ليش تختار الرائدة لتمويل منشأتك؟\n\n✅ نظام سداد مرن مع مبيعاتك\n✅ فهم حقيقي لطبيعة المنشآت الصغيرة\n✅ فريق نجاح العميل معك دائماً\n\nمو بس تمويل — شريك بزنس! 💪\n\n💬 سؤالك الجاي؟ اكتبه! ⬇️`,
+      li:  `في سوق التمويل غير المصرفي للمنشآت الصغيرة والمتوسطة بالسعودية — التمييز الحقيقي يأتي من العمق لا من السطح.\n\nما يميز الرائدة:\n• نموذج تحصيل مرن يتكيف مع واقع المبيعات\n• منهجية تقييم تراعي خصوصية كل منشأة\n• فريق نجاح عميل مخصص لدعم استمرارية الأعمال\n\nالشراكة الحقيقية مع أصحاب المنشآت — لا مجرد صفقة تمويل.\n\n💬 ما العامل الأهم بالنسبة لك عند اختيار جهة التمويل؟`,
+      tt:  `ليش الرائدة وما غيرها؟ 🤔\n\nلأنهم شريك يفهم بزنسك — مو بس ممول 🏆\n\n#الرائدة_للتمويل #تمويل_المنشآت #fyp`
+    },
+    hashtags: "#الرائدة_للتمويل #ليش_الرائدة #شريك_النجاح"
+  },
+  {
+    week: 10, weekLabel: "الأسبوع العاشر",
+    num: 19, day: "الأحد", date: "٦ يوليو ٢٠٢٦",
+    topic: "وش شروط تمويل بمبالغ متناهية الصغر؟",
+    captions: {
+      yt:  `تمويل متناهي الصغر — للمنشأة الصغيرة في أول رحلتها!\n\nالشروط بسيطة جداً:\n✅ سجل تجاري ساري\n✅ كشف حساب بنكي لآخر ٣ أشهر\n✅ متوسط مبيعات شهرية ٢٠ ألف ريال فأكثر\n\nصغير في الحجم — لكنه أول خطوة نحو النمو الكبير 🚀\n\n💬 اكتب سؤالك ⬇️`,
+      ig:  `📌 تمويل متناهي الصغر من الرائدة — الشروط بسيطة!\n\n✅ سجل تجاري\n✅ كشف حساب ٣ أشهر\n✅ متوسط مبيعات ٢٠ ألف ريال\n\nابدأ رحلتك مع الرائدة اليوم 🚀\n\n💬 اكتب سؤالك ⬇️`,
+      li:  `التمويل متناهي الصغر — ركيزة دعم المنشآت الناشئة في السعودية.\n\nشروط التأهل في الرائدة:\n• سجل تجاري ساري\n• كشف حساب بنكي (٣ أشهر على الأقل)\n• متوسط مبيعات شهرية لا تقل عن ٢٠,٠٠٠ ريال\n\nالتمويل متناهي الصغر أداة فعّالة لتمكين أصحاب المنشآت الصغيرة من بناء سجل ائتماني قوي وتحقيق النمو التدريجي.\n\n💬 هل تعتقد أن برامج التمويل متناهي الصغر كافية في السوق السعودي؟`,
+      tt:  `منشأتك صغيرة؟ الرائدة عندها تمويل لك 💪\n\nمتوسط مبيعات ٢٠ ألف ريال + وثيقتين — وبدأت!\n\n#تمويل_متناهي_الصغر #منشآت #fyp`
+    },
+    hashtags: "#الرائدة_للتمويل #تمويل_متناهي_الصغر #منشآت"
+  },
+  {
+    week: 11, weekLabel: "الأسبوع الحادي عشر — أثناء دراسة الطلب والموافقة (الائتمان)",
+    num: 20, day: "الأحد", date: "١٣ يوليو ٢٠٢٦",
+    topic: "وش الرائدة تشوف بالمشروع عشان تموله؟",
+    captions: {
+      yt:  `قبل منح التمويل — نقيّم منشأتك بـ ٥ معايير أساسية:\n\n١) شخصية العميل — التاريخ الائتماني ومدى فهم المالك لنشاطه\n٢) القدرة على السداد — هل تحقق تدفقات نقدية كافية؟\n٣) رأس المال ومصادر الدخل — قوة الوضع المالي\n٤) الضمانات — عند الحاجة فقط\n٥) ظروف النشاط والسوق — العوامل الخارجية\n\nهدفنا تمويل يناسب قدرتك الحقيقية ✅\n\n💬 اكتب سؤالك ⬇️`,
+      ig:  `🔍 وش تشوف الرائدة في مشروعك قبل التمويل؟\n\n٥ معايير أساسية:\n١️⃣ شخصية العميل والتاريخ الائتماني\n٢️⃣ القدرة على السداد\n٣️⃣ رأس المال ومصادر الدخل\n٤️⃣ الضمانات (عند الحاجة)\n٥️⃣ ظروف النشاط والسوق\n\nتقييم شامل يضمن تمويلاً مناسباً ✅\n\n💬 اكتب سؤالك ⬇️`,
+      li:  `أثناء دراسة الطلب والموافقة على التمويل، تعتمد الرائدة على ٥ معايير لتقييم الجدارة الائتمانية:\n\n١. شخصية العميل — التاريخ الائتماني والالتزام السابق بالسداد، ومدى فهم مالك المنشأة لنشاطه.\n٢. القدرة على السداد — تقييم التدفقات النقدية وقدرة النشاط على الوفاء بالالتزامات.\n٣. رأس المال ومصادر الدخل — مساهمة المالك في النشاط وقوة وضعه المالي.\n٤. الضمانات — نوع الضمان ومدى تغطيته لقيمة التمويل عند الحاجة.\n٥. ظروف النشاط والسوق — العوامل الخارجية مثل وضع السوق والاقتصاد.\n\n💬 أي هذه المعايير تعتقد أنه يحظى بالوزن الأكبر؟`,
+      tt:  `وش تشوف الرائدة في مشروعك قبل التمويل؟ 🔍\n\n٥ معايير تحدد القرار — شوف المقطع 👆\n\n#الرائدة_للتمويل #ائتمان #fyp`,
+    },
+    hashtags: "#الرائدة_للتمويل #معايير_الائتمان #جدارة_ائتمانية",
+    section: "أثناء دراسة الطلب والموافقة على التمويل — الائتمان"
+  },
+  {
+    week: 11, weekLabel: "",
+    num: 21, day: "الأربعاء", date: "١٦ يوليو ٢٠٢٦",
+    topic: "كيف تعرفون أن العميل فاهم نشاطه التجاري؟",
+    captions: {
+      yt:  `كيف نقيّم فهم العميل لنشاطه التجاري؟\n\nنسأله أسئلة أساسية:\n🔸 كيف يحقق الإيراد؟\n🔸 من هم عملاؤه؟\n🔸 ما تكلفة المنتج أو الخدمة؟\n\nإذا كانت إجاباته واضحة ومحددة وبها أرقام — فهذا مؤشر جيد على فهمه لنشاطه وقدرته على إدارته 🎯\n\n💬 اكتب سؤالك ⬇️`,
+      ig:  `💡 كيف نعرف إنك فاهم بزنسك؟\n\nنسألك:\n🔸 كيف تحقق إيرادك؟\n🔸 من عملاؤك؟\n🔸 ما تكلفة خدمتك أو منتجك؟\n\nإجابات واضحة + أرقام = مؤشر ثقة عالٍ 🎯\n\n💬 اكتب سؤالك ⬇️`,
+      li:  `من أهم معايير تقييم الجدارة الائتمانية: مدى فهم صاحب المنشأة لنشاطه التجاري.\n\nفي الرائدة، نقيّم هذا الفهم عبر أسئلة تشخيصية:\n• كيف يحقق النشاط الإيراد؟\n• من هم العملاء الفعليون؟\n• ما هي تكلفة المنتج أو الخدمة؟\n\nإذا كانت الإجابات واضحة ومحددة وبها أرقام، فهذا يعطينا مؤشراً جيداً على فهم صاحب المنشأة لنشاطه وقدرته على إدارته.\n\n💬 كيف تصف مستوى وعي أصحاب المنشآت الصغيرة بأرقام أعمالهم في السوق السعودي؟`,
+      tt:  `كيف يعرفون إنك فاهم بزنسك؟ 🤔\n\n٣ أسئلة بسيطة تكشف كل شيء — شوف المقطع 👆\n\n#تمويل_ذكي #منشآت #fyp`
+    },
+    hashtags: "#الرائدة_للتمويل #تقييم_الائتمان #تمويل_ذكي"
+  }
+];
+
+// ── SELF-CONTAINED STORAGE ──
+// Data lives inside the HTML file itself so anyone who opens the file sees the saved state
+
+function getStore() {
+  try {
+    const el = document.getElementById('_store');
+    if (el && el.textContent.trim()) return JSON.parse(el.textContent);
+  } catch(e) {}
+  return { links: {}, statuses: {} };
+}
+
+let _saveTimer = null;
+function triggerSave() {
+  clearTimeout(_saveTimer);
+  _saveTimer = setTimeout(() => {
+    const html = '<!DOCTYPE html>' + document.documentElement.outerHTML;
+    const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'خطة_النشر_الرائدة.html';
+    a.click();
+    URL.revokeObjectURL(a.href);
+    showToast();
+  }, 1500);
+}
+
+function writeStore(data) {
+  let el = document.getElementById('_store');
+  if (!el) {
+    el = document.createElement('script');
+    el.id = '_store';
+    el.type = 'application/json';
+    document.head.appendChild(el);
+  }
+  el.textContent = JSON.stringify(data);
+  triggerSave();
+}
+
+function saveLink(inp) {
+  const idx = inp.dataset.idx;
+  const btn = document.getElementById('link-btn-' + idx);
+  const hasLink = inp.value.trim().length > 0;
+  if (btn) {
+    btn.classList.toggle('no-link', !hasLink);
+    if (hasLink) btn.setAttribute('href', inp.value.trim());
+    else btn.setAttribute('href', '#');
+  }
+  const d = getStore();
+  d.links[idx] = inp.value;
+  writeStore(d);
+}
+
+async function sGet(key) {
+  const d = getStore();
+  if (key.startsWith('link_'))   return d.links[key.slice(5)] || null;
+  if (key.startsWith('status_')) return d.statuses[key.slice(7)] || null;
+  return null;
+}
+async function sSet(key, val) {
+  const d = getStore();
+  if (key.startsWith('link_'))   d.links[key.slice(5)] = val;
+  if (key.startsWith('status_')) d.statuses[key.slice(7)] = val;
+  writeStore(d);
+}
+
+// ── TOAST ──
+let toastTimer;
+function showToast() {
+  const t = document.getElementById('saveToast');
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// ── BUILD CARD ──
+function buildCard(v, i, isIntroStyle) {
+  const badgeClass = v.day === 'الأحد' ? 'badge-sun' : 'badge-wed';
+  const numStr = String(v.num).padStart(2,'0');
+  const topStyle    = isIntroStyle ? 'style="background:var(--color-dark);"' : '';
+  const numColor    = isIntroStyle ? 'style="color:rgba(255,255,255,0.2);"' : '';
+  const dateColor   = isIntroStyle ? 'style="color:var(--color-yellow);"' : '';
+  const topicColor  = isIntroStyle ? 'style="color:#fff;"' : '';
+
+  const platforms = [
+    { key:'yt', label:'يوتيوب',   activeClass:'active-yt' },
+    { key:'ig', label:'انستقرام', activeClass:'active-ig' },
+    { key:'li', label:'لنكدان',   activeClass:'active-li' },
+    { key:'tt', label:'تيك توك',  activeClass:'active-tt' },
+  ];
+
+  const tabsHTML = platforms.map((p, pi) => `
+    <button class="cap-tab${pi === 0 ? ' active-yt' : ''}"
+      onclick="switchPlatform(this, '${p.key}', ${i})"
+      data-platform="${p.key}">
+      ${ICONS[p.key]} ${p.label}
+    </button>
+  `).join('');
+
+  function mkLen(raw) {
+    const words = raw.replace(/<br>/g,'\n').replace(/\n/g,' ').trim().split(/\s+/);
+    const med = words.slice(0, Math.min(words.length, 14)).join(' ') + (words.length > 14 ? '...' : '');
+    const sht = words.slice(0, Math.min(words.length, 6)).join(' ')  + (words.length > 6  ? '...' : '');
+    return { long: raw, medium: med, short: sht };
+  }
+
+  const copyIcon = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
+
+  const panelsHTML = platforms.map((p, pi) => {
+    const raw = (v.captions[p.key] || '').replace(/\n/g,'<br>');
+    const lv  = mkLen(raw);
+    const lenPanel = (lenKey, text) => `
+      <div class="len-panel${lenKey==='long'?' active':''}" id="len-${p.key}-${lenKey}-${i}">
+        <div class="card-caption ${p.key}">${text}</div>
+        <div class="caption-footer">
+          <span class="char-count">${text.replace(/<br>/g,' ').length} حرف</span>
+          <button class="copy-caption-btn" onclick="copyLen(this,'${p.key}','${lenKey}',${i})">${copyIcon} نسخ</button>
+        </div>
+      </div>`;
+    return `
+    <div class="caption-panel${pi === 0 ? ' active' : ''}" id="cap-${p.key}-${i}">
+      <div class="len-tabs">
+        <button class="len-tab active" onclick="switchLen(this,'${p.key}','long',${i})">طويل</button>
+        <button class="len-tab"        onclick="switchLen(this,'${p.key}','medium',${i})">متوسط</button>
+        <button class="len-tab"        onclick="switchLen(this,'${p.key}','short',${i})">قصير</button>
+      </div>
+      ${lenPanel('long', lv.long)}
+      ${lenPanel('medium', lv.medium)}
+      ${lenPanel('short', lv.short)}
+    </div>`;
+  }).join('');
+
+  return `
+    <div class="video-card"${isIntroStyle ? ' style="border:2px solid var(--color-yellow);"' : ''}>
+      <div class="card-top" ${topStyle}>
+        <div class="card-title-block">
+          <div class="card-date" ${dateColor}>${v.date} — ${v.day}</div>
+          <div class="card-topic" ${topicColor}>${v.topic}</div>
+        </div>
+        <div>
+          <span class="video-num" ${numColor}>${numStr}</span>
+          <div class="card-day-badge ${badgeClass}" style="text-align:center;margin-top:4px;">${v.day}</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div>
+          <div class="card-section-label" style="margin-bottom:6px;">الكابشن حسب المنصة</div>
+          <div class="caption-tabs">${tabsHTML}</div>
+          ${panelsHTML}
+        </div>
+        <div class="card-hashtags">${v.hashtags}</div>
+        <div>
+          <div class="card-section-label">رابط الفيديو</div>
+          <div class="link-row" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+            <input type="url" class="link-url-input" placeholder="أضف رابط الفيديو..." data-idx="${i}" oninput="saveLink(this)">
+            <a href="#" class="link-open-btn no-link" id="link-btn-${i}" target="_blank" rel="noopener" onclick="return openVideoLink(event, ${i})">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              شاهد الفيديو
+            </a>
+          </div>
+        </div>
+        <div class="card-status">
+          <div class="card-section-label">الحالة</div>
+          <select class="status-select status-pending" onchange="handleStatus(this)">
+            <option value="pending">لم ينشر</option>
+            <option value="ready">جاهز</option>
+            <option value="done">تم النشر</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// ── RENDER ──
+window.addEventListener("load", function() {
+const calendar = document.getElementById('calendar');
+let currentWeek = -1, weekEl = null, cardsEl = null;
+
+videos.forEach((v, i) => {
+  if (v.isIntro) {
+    const b = document.createElement('div');
+    b.className = 'week-block';
+    b.innerHTML = `
+      <div class="week-header">
+        <span class="week-number" style="background:var(--color-yellow);color:var(--color-dark);">الإنترو</span>
+        <span class="week-title">${v.weekLabel}</span>
+        <span class="week-line"></span>
+      </div>
+      <div class="week-cards" style="grid-template-columns:1fr;">${buildCard(v, i, true)}</div>
+    `;
+    calendar.appendChild(b);
+    return;
+  }
+
+  if (v.week !== currentWeek) {
+    currentWeek = v.week;
+    if (v.section) {
+      const div = document.createElement('div');
+      div.className = 'section-divider';
+      div.innerHTML = `<span class="section-divider-badge">قسم الائتمان</span><span class="section-divider-sub">${v.section}</span><span class="section-divider-line"></span>`;
+      calendar.appendChild(div);
+    }
+    weekEl = document.createElement('div');
+    weekEl.className = 'week-block';
+    weekEl.innerHTML = `<div class="week-header"><span class="week-number">الأسبوع ${currentWeek}</span><span class="week-title">${v.weekLabel || ''}</span><span class="week-line"></span></div>`;
+    cardsEl = document.createElement('div');
+    cardsEl.className = 'week-cards';
+    weekEl.appendChild(cardsEl);
+    calendar.appendChild(weekEl);
+  }
+
+  const d = document.createElement('div');
+  d.innerHTML = buildCard(v, i, false);
+  cardsEl.appendChild(d.firstElementChild);
+});
+
+// ── RESTORE STATE ──
+function loadState() {
+  const d = getStore();
+  document.querySelectorAll('.link-url-input').forEach(inp => {
+    const idx = inp.dataset.idx;
+    const val = d.links[idx] || d.links[String(parseInt(idx))];
+    if (val && val.trim()) {
+      inp.value = val;
+      const btn = document.getElementById('link-btn-' + idx);
+      if (btn) {
+        btn.classList.remove('no-link');
+        btn.href = val;
+        btn.style.pointerEvents = 'auto';
+        btn.style.cursor = 'pointer';
+      }
+    }
+  });
+  document.querySelectorAll('.status-select').forEach((sel, i) => {
+    const val = d.statuses[i];
+    if (val) { sel.value = val; applyStatus(sel); }
+  });
+}
+loadState();
+}); // end window.load
+
+// ── FUNCTIONS ──
+function switchAllLen(btn, len, idx) {
+  // نبدل الـ len لكل المنصات في نفس الكارد
+  const shared = document.getElementById('len-shared-' + idx);
+  if (shared) {
+    shared.querySelectorAll('.len-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+  }
+  const platforms = ['yt','ig','li','tt'];
+  platforms.forEach(p => {
+    const panel = document.getElementById('cap-' + p + '-' + idx);
+    if (!panel) return;
+    panel.querySelectorAll('.len-panel').forEach(lp => lp.classList.remove('active'));
+    const target = document.getElementById('len-' + p + '-' + len + '-' + idx);
+    if (target) target.classList.add('active');
+  });
+}
+
+function switchLen(btn, platform, len, idx) {
+  const panel = document.getElementById('cap-' + platform + '-' + idx);
+  panel.querySelectorAll('.len-tab').forEach(t => t.classList.remove('active'));
+  panel.querySelectorAll('.len-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('len-' + platform + '-' + len + '-' + idx).classList.add('active');
+}
+
+function copyLen(btn, platform, len, idx) {
+  const el = document.getElementById('len-' + platform + '-' + len + '-' + idx);
+  const text = el.querySelector('.card-caption').innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.classList.add('copied');
+    btn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> تم!`;
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> نسخ`;
+    }, 2000);
+  }).catch(() => {});
+}
+
+function switchPlatform(btn, platform, idx) {
+  const body = btn.closest('.card-body');
+  const activeClasses = ['active-yt','active-ig','active-li','active-tt'];
+  body.querySelectorAll('.cap-tab').forEach(t => t.classList.remove(...activeClasses));
+  body.querySelectorAll('.caption-panel').forEach(p => p.classList.remove('active'));
+  const classMap = { yt:'active-yt', ig:'active-ig', li:'active-li', tt:'active-tt' };
+  btn.classList.add(classMap[platform]);
+  document.getElementById(`cap-${platform}-${idx}`).classList.add('active');
+}
+
+function copyCaption(btn, idx, platform) {
+  const text = document.getElementById(`cap-${platform}-${idx}`).querySelector('.card-caption').innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.classList.add('copied');
+    btn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> تم النسخ!`;
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> نسخ الكابشن`;
+    }, 2000);
+  }).catch(() => {});
+}
+
+async function handleStatus(sel) {
+  applyStatus(sel);
+  const idx = [...document.querySelectorAll('.status-select')].indexOf(sel);
+  const d = getStore();
+  d.statuses[idx] = sel.value;
+  writeStore(d);
+}
+
+function applyStatus(sel) {
+  sel.className = 'status-select';
+  if (sel.value === 'pending') sel.classList.add('status-pending');
+  else if (sel.value === 'ready') sel.classList.add('status-ready');
+  else if (sel.value === 'done') sel.classList.add('status-done');
+}
+
+function openVideoLink(e, idx) {
+  e.preventDefault();
+  const inp = document.querySelector('.link-url-input[data-idx="' + idx + '"]');
+  const url = (inp && inp.value.trim()) ? inp.value.trim() : null;
+  if (url) { window.open(url, '_blank'); }
+  return false;
+}
+
+function copyLink(btn) {
+  const input = btn.closest('.link-row').querySelector('.link-url-input');
+  if (input.value) navigator.clipboard.writeText(input.value).catch(() => {});
+}
+</script>
+
+
+</body></html>
